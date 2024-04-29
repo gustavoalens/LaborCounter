@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,10 @@
 		1D481F3C2BDDBCB700DCD0D8 /* LaborCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D481F3B2BDDBCB700DCD0D8 /* LaborCounterTests.swift */; };
 		1D481F462BDDBCB700DCD0D8 /* LaborCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D481F452BDDBCB700DCD0D8 /* LaborCounterUITests.swift */; };
 		1D481F482BDDBCB700DCD0D8 /* LaborCounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D481F472BDDBCB700DCD0D8 /* LaborCounterUITestsLaunchTests.swift */; };
+		1D8D7B982BDE9174004DFDD3 /* MainNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8D7B972BDE9174004DFDD3 /* MainNavigationView.swift */; };
+		1D8D7B9A2BDE919A004DFDD3 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8D7B992BDE919A004DFDD3 /* MainCoordinator.swift */; };
+		1D8D7B9E2BE056E4004DFDD3 /* ContractionCounter in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8D7B9D2BE056E4004DFDD3 /* ContractionCounter */; };
+		1DB103592BDDCB80008A8EB5 /* ContractionCounter in Resources */ = {isa = PBXBuildFile; fileRef = 1DB103572BDDCB7F008A8EB5 /* ContractionCounter */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,9 @@
 		1D481F412BDDBCB700DCD0D8 /* LaborCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LaborCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D481F452BDDBCB700DCD0D8 /* LaborCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaborCounterUITests.swift; sourceTree = "<group>"; };
 		1D481F472BDDBCB700DCD0D8 /* LaborCounterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaborCounterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1D8D7B972BDE9174004DFDD3 /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationView.swift; sourceTree = "<group>"; };
+		1D8D7B992BDE919A004DFDD3 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		1DB103572BDDCB7F008A8EB5 /* ContractionCounter */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ContractionCounter; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8D7B9E2BE056E4004DFDD3 /* ContractionCounter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +87,12 @@
 		1D481F182BDDBCB400DCD0D8 = {
 			isa = PBXGroup;
 			children = (
+				1DB103582BDDCB7F008A8EB5 /* Packages */,
 				1D481F232BDDBCB400DCD0D8 /* LaborCounter */,
 				1D481F3A2BDDBCB700DCD0D8 /* LaborCounterTests */,
 				1D481F442BDDBCB700DCD0D8 /* LaborCounterUITests */,
 				1D481F222BDDBCB400DCD0D8 /* Products */,
+				1D8D7B9C2BE056E4004DFDD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +109,7 @@
 		1D481F232BDDBCB400DCD0D8 /* LaborCounter */ = {
 			isa = PBXGroup;
 			children = (
+				1D8D7B9B2BDEA064004DFDD3 /* Main */,
 				1D481F242BDDBCB400DCD0D8 /* LaborCounterApp.swift */,
 				1D481F262BDDBCB400DCD0D8 /* Persistence.swift */,
 				1D481F2B2BDDBCB400DCD0D8 /* ContentView.swift */,
@@ -135,6 +146,38 @@
 			path = LaborCounterUITests;
 			sourceTree = "<group>";
 		};
+		1D8D7B962BDE9158004DFDD3 /* MainCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1D8D7B972BDE9174004DFDD3 /* MainNavigationView.swift */,
+				1D8D7B992BDE919A004DFDD3 /* MainCoordinator.swift */,
+			);
+			path = MainCoordinator;
+			sourceTree = "<group>";
+		};
+		1D8D7B9B2BDEA064004DFDD3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1D8D7B962BDE9158004DFDD3 /* MainCoordinator */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1D8D7B9C2BE056E4004DFDD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DB103582BDDCB7F008A8EB5 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				1DB103572BDDCB7F008A8EB5 /* ContractionCounter */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,6 +194,9 @@
 			dependencies = (
 			);
 			name = LaborCounter;
+			packageProductDependencies = (
+				1D8D7B9D2BE056E4004DFDD3 /* ContractionCounter */,
+			);
 			productName = LaborCounter;
 			productReference = 1D481F212BDDBCB400DCD0D8 /* LaborCounter.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +270,9 @@
 				"pt-BR",
 			);
 			mainGroup = 1D481F182BDDBCB400DCD0D8;
+			packageReferences = (
+				1DB103562BDDCB65008A8EB5 /* XCLocalSwiftPackageReference "Packages/ContractionCounter" */,
+			);
 			productRefGroup = 1D481F222BDDBCB400DCD0D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,6 +291,7 @@
 			files = (
 				1D481F322BDDBCB600DCD0D8 /* Preview Assets.xcassets in Resources */,
 				1D481F2E2BDDBCB600DCD0D8 /* Assets.xcassets in Resources */,
+				1DB103592BDDCB80008A8EB5 /* ContractionCounter in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +316,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8D7B982BDE9174004DFDD3 /* MainNavigationView.swift in Sources */,
 				1D481F2A2BDDBCB400DCD0D8 /* LaborCounter.xcdatamodeld in Sources */,
 				1D481F252BDDBCB400DCD0D8 /* LaborCounterApp.swift in Sources */,
 				1D481F2C2BDDBCB400DCD0D8 /* ContentView.swift in Sources */,
+				1D8D7B9A2BDE919A004DFDD3 /* MainCoordinator.swift in Sources */,
 				1D481F272BDDBCB400DCD0D8 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +684,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		1DB103562BDDCB65008A8EB5 /* XCLocalSwiftPackageReference "Packages/ContractionCounter" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/ContractionCounter;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D8D7B9D2BE056E4004DFDD3 /* ContractionCounter */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ContractionCounter;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1D481F282BDDBCB400DCD0D8 /* LaborCounter.xcdatamodeld */ = {

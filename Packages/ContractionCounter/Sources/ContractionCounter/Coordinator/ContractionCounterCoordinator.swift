@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 
-final class ContractionCounterCoordinator: MainCoordinatorProtocol {
+final class ContractionCounterCoordinator: ContractionCounterCoordinatorProtocol {
   lazy var current: Binding<NavigationPath> = {
     .init(get: { [weak self] in
       self?.path ?? .init()
@@ -16,18 +16,11 @@ final class ContractionCounterCoordinator: MainCoordinatorProtocol {
     self.path = path
   }
   
-  func build() -> AnyView {
-    return AnyView(Text("Initial test"))
-  }
-  
-  
 }
 
 
-protocol MainCoordinatorProtocol: ObservableObject {
+protocol ContractionCounterCoordinatorProtocol: ObservableObject {
   var current: Binding<NavigationPath> { get }
-  
-  func build() -> AnyView
 }
 
 enum MainFeature {

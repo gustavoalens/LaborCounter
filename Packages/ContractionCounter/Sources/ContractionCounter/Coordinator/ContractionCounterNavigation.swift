@@ -1,18 +1,29 @@
-//
-//  SwiftUIView.swift
-//  
-//
-//  Created by Gustavo Alencar Silva on 29/04/24.
-//
-
 import SwiftUI
 
-struct SwiftUIView: View {
+struct ContractionCounterNavigation<RootView: View, Coordinator: ContractionCounterCoordinatorProtocol>: View {
+  let rootView: RootView
+  
+  @StateObject var coordinator: Coordinator
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      NavigationStack(path: coordinator.current) {
+        rootView
+      }
     }
 }
 
 #Preview {
-    SwiftUIView()
+  ContractionCounterNavigation(
+    rootView: Text("NavigationTest"),coordinator: ContractionCounterCoordinator(path: .init())
+  )
 }
+
+public final class ContractionCounterComposer {
+  public static func start(path: NavigationPath) -> AnyView {
+    let coordinator = ContractionCounterCoordinator(path: path)
+    let viewModel = ContractionCounterViewModel(coordinator: coordinator)
+    return AnyView(ContractionCounterNavigation(rootView: ContractionCounterView(viewModel: viewModel), coordinator: coordinator))
+  }
+}
+
+
+// TODO: Organizes files

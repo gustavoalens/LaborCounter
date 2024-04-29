@@ -1,18 +1,13 @@
-//
-//  SwiftUIView.swift
-//  
-//
-//  Created by Gustavo Alencar Silva on 29/04/24.
-//
-
 import SwiftUI
 
-struct ContractionCounterView: View {
-    var body: some View {
-        Text("ContractionView")
-    }
+struct ContractionCounterView<ViewModel: ContractionCounterViewModelProtocol>: View {
+  @StateObject var viewModel: ViewModel
+  
+  var body: some View {
+    Text("Contraction View Showing")
+  }
 }
 
 #Preview {
-  ContractionCounterView()
+  ContractionCounterView(viewModel: ContractionCounterViewModel(coordinator: ContractionCounterCoordinator(path: .init())))
 }

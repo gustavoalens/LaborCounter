@@ -2,41 +2,31 @@ import SwiftUI
 import Combine
 
 final class MainCoordinator: MainCoordinatorProtocol {
-  var current: DidSet<MainFeature> = .init(wrappedValue: .contractionCounter)
+  @Published var path: NavigationPath = .init()
   
-//  init() {
-//  }
+  init(path: NavigationPath) {
+    self.path = path
+    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { // TODO: Remove force test
+      self.path.append(MainFeature.contractionCounter)
+    }
+  }
+  
+  func build() -> AnyView {
+    return AnyView(Text("Initial test"))
+  }
+  
+  
 }
 
 
 protocol MainCoordinatorProtocol: ObservableObject {
-  var current: DidSet<MainFeature> { get }
-}
-
-
-final class DidSet<Value> {
-  private var value: Value
-  private let subject: CurrentValueSubject<Value, Never>
+  var path: NavigationPath { get set }
   
-  init(wrappedValue value: Value) {
-    self.value = value
-    self.subject = CurrentValueSubject(value)
-    self.wrappedValue = value
-  }
-  
-  var wrappedValue: Value {
-    set {
-      value = newValue
-      subject.send(newValue)
-    }
-    get { value }
-  }
-  
-  public var projectedValue: CurrentValueSubject<Value, Never> {
-    get { subject }
-  }
+  func build() -> AnyView
 }
 
 enum MainFeature {
   case contractionCounter
 }
+
+// TODO: Organizes files and add composer to main
