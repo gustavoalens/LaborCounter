@@ -1,0 +1,15 @@
+{
+  "originHash" : "2f5b049c1ab57d42d1455117dd7facf83fe80a09eb90fcd95eb947f95b7877ea",
+  "pins" : [
+    {
+      "identity" : "navui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gustavoalens/NavUI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "cd0e5d1b13f71ecf8a3cabe1d0acca15a0c12d6f"
+      }
+    }
+  ],
+  "version" : 3
+}

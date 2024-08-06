@@ -1,32 +1,27 @@
 import SwiftUI
-import Combine
+import NavUI
+import ContractionCounter
 
 final class MainCoordinator: MainCoordinatorProtocol {
-  @Published var path: NavigationPath = .init()
+  private let navigation: Navigation
   
-  init(path: NavigationPath) {
-    self.path = path
-    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { // TODO: Remove force test
-      self.path.append(MainFeature.contractionCounter)
-    }
+  init(navigation: Navigation = .init()) {
+    self.navigation = navigation
   }
   
-  func build() -> AnyView {
-    return AnyView(Text("Initial test"))
+  func start() -> some View {
+    navigation.start(root: ContractionCounterBuilder.start(navigation: navigation))
   }
   
-  
 }
 
-
-protocol MainCoordinatorProtocol: ObservableObject {
-  var path: NavigationPath { get set }
-  
-  func build() -> AnyView
+protocol MainCoordinatorProtocol {
+  associatedtype VView: View
+  func start() -> VView
 }
 
-enum MainFeature {
-  case contractionCounter
-}
+//enum MainFeature {
+//  case contractionCounter
+//}
 
 // TODO: Organizes files and add composer to main

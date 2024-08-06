@@ -9,5 +9,11 @@ struct ContractionCounterView<ViewModel: ContractionCounterViewModelProtocol>: V
 }
 
 #Preview {
-  ContractionCounterView(viewModel: ContractionCounterViewModel(coordinator: ContractionCounterCoordinator(path: .init())))
+  ContractionCounterView(
+    viewModel: ContractionCounterViewModel(
+      coordinator: ContractionCounterCoordinator(
+        navigation: .init()
+      )
+    )
+  )
 }

@@ -12,11 +12,18 @@ let package = Package(
             name: "ContractionCounter",
             targets: ["ContractionCounter"]),
     ],
+    dependencies: [
+      .package(url: "https://github.com/gustavoalens/NavUI", branch: "main")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "ContractionCounter"),
+            name: "ContractionCounter",
+            dependencies: [
+              "NavUI"
+            ]
+        ),
         .testTarget(
             name: "ContractionCounterTests",
             dependencies: ["ContractionCounter"]),

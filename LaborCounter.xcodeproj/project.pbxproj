@@ -20,6 +20,7 @@
 		1D8D7B9A2BDE919A004DFDD3 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8D7B992BDE919A004DFDD3 /* MainCoordinator.swift */; };
 		1D8D7B9E2BE056E4004DFDD3 /* ContractionCounter in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8D7B9D2BE056E4004DFDD3 /* ContractionCounter */; };
 		1DB103592BDDCB80008A8EB5 /* ContractionCounter in Resources */ = {isa = PBXBuildFile; fileRef = 1DB103572BDDCB7F008A8EB5 /* ContractionCounter */; };
+		1DF3FFAD2C62C40E009383C7 /* NavUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF3FFAC2C62C40E009383C7 /* NavUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DF3FFAD2C62C40E009383C7 /* NavUI in Frameworks */,
 				1D8D7B9E2BE056E4004DFDD3 /* ContractionCounter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,6 +198,7 @@
 			name = LaborCounter;
 			packageProductDependencies = (
 				1D8D7B9D2BE056E4004DFDD3 /* ContractionCounter */,
+				1DF3FFAC2C62C40E009383C7 /* NavUI */,
 			);
 			productName = LaborCounter;
 			productReference = 1D481F212BDDBCB400DCD0D8 /* LaborCounter.app */;
@@ -272,6 +275,7 @@
 			mainGroup = 1D481F182BDDBCB400DCD0D8;
 			packageReferences = (
 				1DB103562BDDCB65008A8EB5 /* XCLocalSwiftPackageReference "Packages/ContractionCounter" */,
+				1DF3FFAB2C62C401009383C7 /* XCRemoteSwiftPackageReference "NavUI" */,
 			);
 			productRefGroup = 1D481F222BDDBCB400DCD0D8 /* Products */;
 			projectDirPath = "";
@@ -692,10 +696,26 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		1DF3FFAB2C62C401009383C7 /* XCRemoteSwiftPackageReference "NavUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gustavoalens/NavUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		1D8D7B9D2BE056E4004DFDD3 /* ContractionCounter */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ContractionCounter;
+		};
+		1DF3FFAC2C62C40E009383C7 /* NavUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DF3FFAB2C62C401009383C7 /* XCRemoteSwiftPackageReference "NavUI" */;
+			productName = NavUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 

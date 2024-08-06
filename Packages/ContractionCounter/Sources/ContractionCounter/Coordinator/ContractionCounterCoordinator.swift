@@ -1,28 +1,20 @@
 import SwiftUI
-import Combine
+import NavUI
 
 final class ContractionCounterCoordinator: ContractionCounterCoordinatorProtocol {
-  lazy var current: Binding<NavigationPath> = {
-    .init(get: { [weak self] in
-      self?.path ?? .init()
-    }, set: { [weak self] newPath in
-      self?.path = newPath
-    })
-  }()
+  private let navigation: Navigation
   
-  private var path: NavigationPath = .init()
+  init(navigation: Navigation) {
+    self.navigation = navigation
+  }
   
-  init(path: NavigationPath) {
-    self.path = path
+  func start<ViewModel: ContractionCounterViewModelProtocol>(viewModel: ViewModel) {
+    navigation.start(root: ContractionCounterView<ViewModel>(viewModel: viewModel))
   }
   
 }
 
 
 protocol ContractionCounterCoordinatorProtocol: ObservableObject {
-  var current: Binding<NavigationPath> { get }
 }
 
-enum MainFeature {
-  case contractionCounter
-}
