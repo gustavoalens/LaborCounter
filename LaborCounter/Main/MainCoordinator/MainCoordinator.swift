@@ -10,18 +10,15 @@ final class MainCoordinator: MainCoordinatorProtocol {
   }
   
   func start() -> some View {
+    AnyView(startCounter())
+  }
+  
+  func startCounter() -> any View {
     navigation.start(root: ContractionCounterBuilder.start(navigation: navigation))
   }
   
 }
 
 protocol MainCoordinatorProtocol {
-  associatedtype VView: View
-  func start() -> VView
+  func startCounter() -> any View
 }
-
-//enum MainFeature {
-//  case contractionCounter
-//}
-
-// TODO: Organizes files and add composer to main
