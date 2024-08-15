@@ -9,6 +9,7 @@ public protocol ColorTheme {
   var primary: Color { get }
   var secondary: Color { get }
   var background: Color { get }
+  var accentBackground: Color { get }
   var accent: Color { get }
 }
 
