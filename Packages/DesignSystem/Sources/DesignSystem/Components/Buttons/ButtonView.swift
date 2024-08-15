@@ -43,5 +43,8 @@ public struct ButtonView: View {
 }
 
 #Preview {
-  ButtonView(title: "Button") { print("didTapButton") }
+  ZStack {
+    DSColors.background
+    ButtonView(title: "Button") { print("didTapButton") }
+  }
 }

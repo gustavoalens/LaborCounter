@@ -52,7 +52,10 @@ public struct RoundedIconButtonView: View {
 }
 
 #Preview {
-  RoundedIconButtonView(icon: Image(systemName: "play.circle")) {
-    print("didTap")
+  ZStack {
+    DSColors.background
+    RoundedIconButtonView(icon: Image(systemName: "play.circle")) {
+      print("didTap")
+    }
   }
 }
