@@ -2,10 +2,16 @@ import SwiftUI
 
 public struct ButtonView: View {
   let title: String
-  var size: Size = .normal
+  var size: Size
   let action: () -> Void
   
   @State private var isPressing: Bool = false
+  
+  init(title: String, size: Size = .normal, action: @escaping () -> Void) {
+    self.title = title
+    self.size = size
+    self.action = action
+  }
   
   public var body: some View {
     ZStack(alignment: .center) {

@@ -1,11 +1,17 @@
 import SwiftUI
 
 public struct RoundedIconButtonView: View {
-  let icon: Image
-  var size: Size = .normal
-  let action: () -> Void
+  private let icon: Image
+  private let size: Size
+  private let action: () -> Void
   
   @State private var isPressing: Bool = false
+  
+  public init(icon: Image, size: Size = .normal, action: @escaping () -> Void) {
+    self.icon = icon
+    self.size = size
+    self.action = action
+  }
   
   public var body: some View {
     ZStack(alignment: .center) {

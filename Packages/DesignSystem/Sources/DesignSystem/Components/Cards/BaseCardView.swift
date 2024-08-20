@@ -1,17 +1,22 @@
 import SwiftUI
 
-struct BaseCardView<Content: View>: View {
-  var selection: Selection = .selectable(action: {})
-  let content: Content
+public struct BaseCardView<Content: View>: View {
+  private let selection: Selection
+  private let content: () -> Content
   
   @State private var isPressing: Bool = false
   
-  var body: some View {
+  public init(selection: Selection = .selectable(action: {}), @ViewBuilder content: @escaping () -> Content) {
+    self.selection = selection
+    self.content = content
+  }
+  
+  public var body: some View {
     ZStack(alignment: .center) {
       RoundedRectangle(cornerRadius: 12)
         .fill(DSColors.accentBackground)
         .shadow(radius: isPressing ? 15 : 5)
-      content
+      content()
         .padding(.init(
           top: DSSpacings.Stack.small,
           leading: DSSpacings.Inline.small,
@@ -44,7 +49,7 @@ struct BaseCardView<Content: View>: View {
     }
   }
   
-  enum Selection {
+  public enum Selection {
     case none
     case selectable(action: () -> Void)
   }
@@ -54,10 +59,10 @@ struct BaseCardView<Content: View>: View {
   ZStack {
     DSColors.background
     LazyVGrid(columns: [.init(), .init()]) {
-      BaseCardView(content: Text("Teste"))
-      BaseCardView(content: Text("Testeadasdasdasdasdasdteste"))
-      BaseCardView(content: Text("Teste"))
-      BaseCardView(content: Text("Teste"))
+      BaseCardView { Text("Teste") }
+      BaseCardView { Text("Testeadasdasdasdasdasdteste") }
+      BaseCardView { Text("Teste") }
+      BaseCardView { Text("Teste") }
     }
     .padding(.init(top: 0, leading: 6, bottom: 0, trailing: 6))
   }
