@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,8 @@
 		1D90E7082C64147600294899 /* DesignSystem in Resources */ = {isa = PBXBuildFile; fileRef = 1D90E7072C64147600294899 /* DesignSystem */; };
 		1D90E70D2C643C7400294899 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1D90E70C2C643C7400294899 /* Localizable.xcstrings */; };
 		1DB103592BDDCB80008A8EB5 /* ContractionCounter in Resources */ = {isa = PBXBuildFile; fileRef = 1DB103572BDDCB7F008A8EB5 /* ContractionCounter */; };
+		1DCA211E2C76BA730022C4C5 /* LaunchingKit in Resources */ = {isa = PBXBuildFile; fileRef = 1DCA211D2C76BA730022C4C5 /* LaunchingKit */; };
+		1DCA21202C76BA830022C4C5 /* LaunchingKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCA211F2C76BA830022C4C5 /* LaunchingKit */; };
 		1DF3FFAD2C62C40E009383C7 /* NavUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1DF3FFAC2C62C40E009383C7 /* NavUI */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,7 @@
 		1D90E70B2C643C0000294899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D90E70C2C643C7400294899 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1DB103572BDDCB7F008A8EB5 /* ContractionCounter */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ContractionCounter; sourceTree = "<group>"; };
+		1DCA211D2C76BA730022C4C5 /* LaunchingKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LaunchingKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DCA21202C76BA830022C4C5 /* LaunchingKit in Frameworks */,
 				1DF3FFAD2C62C40E009383C7 /* NavUI in Frameworks */,
 				1D8D7B9E2BE056E4004DFDD3 /* ContractionCounter in Frameworks */,
 			);
@@ -187,6 +191,7 @@
 		1DB103582BDDCB7F008A8EB5 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				1DCA211D2C76BA730022C4C5 /* LaunchingKit */,
 				1D90E7072C64147600294899 /* DesignSystem */,
 				1DB103572BDDCB7F008A8EB5 /* ContractionCounter */,
 			);
@@ -212,6 +217,7 @@
 			packageProductDependencies = (
 				1D8D7B9D2BE056E4004DFDD3 /* ContractionCounter */,
 				1DF3FFAC2C62C40E009383C7 /* NavUI */,
+				1DCA211F2C76BA830022C4C5 /* LaunchingKit */,
 			);
 			productName = LaborCounter;
 			productReference = 1D481F212BDDBCB400DCD0D8 /* LaborCounter.app */;
@@ -277,7 +283,6 @@
 				};
 			};
 			buildConfigurationList = 1D481F1C2BDDBCB400DCD0D8 /* Build configuration list for PBXProject "LaborCounter" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -290,6 +295,7 @@
 				1DB103562BDDCB65008A8EB5 /* XCLocalSwiftPackageReference "Packages/ContractionCounter" */,
 				1DF3FFAB2C62C401009383C7 /* XCRemoteSwiftPackageReference "NavUI" */,
 			);
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 1D481F222BDDBCB400DCD0D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -309,6 +315,7 @@
 				1D481F322BDDBCB600DCD0D8 /* Preview Assets.xcassets in Resources */,
 				1D90E70D2C643C7400294899 /* Localizable.xcstrings in Resources */,
 				1D481F2E2BDDBCB600DCD0D8 /* Assets.xcassets in Resources */,
+				1DCA211E2C76BA730022C4C5 /* LaunchingKit in Resources */,
 				1DB103592BDDCB80008A8EB5 /* ContractionCounter in Resources */,
 				1D90E7082C64147600294899 /* DesignSystem in Resources */,
 			);
@@ -495,6 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = LaborCounter/LaborCounter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -504,6 +512,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LaborCounter/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -514,8 +523,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -537,6 +545,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = LaborCounter/LaborCounter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -546,6 +555,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LaborCounter/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -556,8 +566,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -727,6 +736,10 @@
 		1D8D7B9D2BE056E4004DFDD3 /* ContractionCounter */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ContractionCounter;
+		};
+		1DCA211F2C76BA830022C4C5 /* LaunchingKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LaunchingKit;
 		};
 		1DF3FFAC2C62C40E009383C7 /* NavUI */ = {
 			isa = XCSwiftPackageProductDependency;

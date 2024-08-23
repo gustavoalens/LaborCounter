@@ -18,7 +18,8 @@ let package = Package(
         .target(
             name: "DesignSystem",
             resources: [
-              .process("Resources")
+              .process("Resources/Assets.xcassets"),
+              .process("Resources/Colors.xcassets")
             ]
         ),
         .testTarget(
