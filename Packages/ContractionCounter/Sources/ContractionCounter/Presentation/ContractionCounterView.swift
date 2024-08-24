@@ -5,19 +5,22 @@ struct ContractionCounterView<ViewModel: ContractionCounterViewModelProtocol>: V
   @StateObject var viewModel: ViewModel
   
   var body: some View {
-    VStack {
-      ListView {
-        ForEach(viewModel.viewObject.data) { data in
-          ThreeColumnCardView {
-            Text("\(data.id)")
-            Text("\(data.duration)")
-            Text(data.end)
+    ZStack {
+      DSColors.background
+        .ignoresSafeArea()
+      VStack {
+        ListView {
+          ForEach(viewModel.viewObject.data) { data in
+            ThreeColumnCardView {
+              Text("\(data.id)")
+              Text("\(data.duration)")
+              Text(data.end)
+            }
           }
         }
       }
     }
   }
-  
 }
 
 #Preview {
