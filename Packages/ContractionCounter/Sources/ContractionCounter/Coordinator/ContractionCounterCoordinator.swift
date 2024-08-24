@@ -9,7 +9,7 @@ final class ContractionCounterCoordinator: ContractionCounterCoordinatorProtocol
   }
   
   func start<ViewModel: ContractionCounterViewModelProtocol>(viewModel: ViewModel) {
-    navigation.start(root: ContractionCounterView<ViewModel>(viewModel: viewModel))
+    _ = navigation.start(root: ContractionCounterView<ViewModel>(viewModel: viewModel))
   }
   
 }

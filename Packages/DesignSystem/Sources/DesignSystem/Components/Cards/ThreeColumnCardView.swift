@@ -1,9 +1,9 @@
 import SwiftUI
 
 public struct ThreeColumnCardView<Content: View>: View {
-  let content: () -> Content
+  private let content: () -> Content
   
-  init(@ViewBuilder content: @escaping () -> Content) {
+  public init(@ViewBuilder content: @escaping () -> Content) {
     self.content = content
   }
   public var body: some View {

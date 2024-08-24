@@ -5,20 +5,19 @@ struct ContractionCounterView<ViewModel: ContractionCounterViewModelProtocol>: V
   @StateObject var viewModel: ViewModel
   
   var body: some View {
-    DSColors.background
-      .ignoresSafeArea()
-      .overlay {
-        VStack {
-          Text("contraction_counter_navigation_title")
-            .foregroundColor(DSColors.primary)
-          //        .foregroundStyle()
-          Text(ContractionCounterStrings.listTitle)
-            .foregroundColor(DSColors.secondary)
-          Text("test")
+    VStack {
+      ListView {
+        ForEach(viewModel.viewObject.data) { data in
+          ThreeColumnCardView {
+            Text("\(data.id)")
+            Text("\(data.duration)")
+            Text(data.end)
+          }
         }
       }
-      }
-    
+    }
+  }
+  
 }
 
 #Preview {
@@ -26,7 +25,8 @@ struct ContractionCounterView<ViewModel: ContractionCounterViewModelProtocol>: V
     viewModel: ContractionCounterViewModel(
       coordinator: ContractionCounterCoordinator(
         navigation: .init()
-      )
+      ),
+      storage: ContractionCounterStorageMock()
     )
   )
 }
