@@ -17,17 +17,18 @@ public struct RoundedIconButtonView: View {
     ZStack(alignment: .center) {
       DSColors.primary
         .cornerRadius(size.getSize() / 2)
+        .scaleEffect(isPressing ? 1.2 : 1.0)
       icon
         .resizable(resizingMode: .stretch)
         .renderingMode(.template)
         .colorMultiply(DSColors.accent)
         .frame(width: size.getIconSize().width, height: size.getIconSize().height)
+        .scaleEffect(isPressing ? 0.9 : 1.0)
     }
     .frame(width: size.getSize(), height: size.getSize())
     .padding(.horizontal, DSSpacings.Inline.normal)
-    .scaleEffect(isPressing ? 1.3 : 1.0)
     .press {
-      withAnimation(.interpolatingSpring(duration: 0.6, bounce: 2)) {
+      withAnimation(.interpolatingSpring(duration: 1.2, bounce: 2)) {
         isPressing = true
       }
     } onRelease: {
@@ -40,18 +41,19 @@ public struct RoundedIconButtonView: View {
   
   public enum Size {
     case normal
+    case bigger
     
     fileprivate func getSize() -> CGFloat {
       switch self {
-        case .normal:
-          return 56
+        case .normal: return 56
+        case .bigger: return 80
       }
     }
     
     fileprivate func getIconSize() -> CGSize {
       switch self {
-        case .normal:
-          return .init(width: 42, height: 42)
+        case .normal: return .init(width: 42, height: 42)
+        case .bigger: return .init(width: 46, height: 46)
       }
     }
   }
@@ -60,8 +62,13 @@ public struct RoundedIconButtonView: View {
 #Preview {
   ZStack {
     DSColors.background
-    RoundedIconButtonView(icon: Image(systemName: "play.circle")) {
-      print("didTap")
+    VStack {
+      RoundedIconButtonView(icon: Image(systemName: "play.circle"), size: .normal) {
+        print("didTap")
+      }
+      RoundedIconButtonView(icon: Image(systemName: "play.circle"), size: .bigger) {
+        print("didTap")
+      }
     }
   }
 }
