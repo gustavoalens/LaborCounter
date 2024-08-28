@@ -25,6 +25,7 @@ public struct LaunchingView<Content: View>: View {
           .scaleEffect(animate ? 1.6 : 1.0)
         LogoView(style: .initial)
       }
+      .ignoresSafeArea()
       .onAppear {
         withAnimation(.spring(duration: 1.5, bounce: 1).delay(1.5)) {
           animate = true

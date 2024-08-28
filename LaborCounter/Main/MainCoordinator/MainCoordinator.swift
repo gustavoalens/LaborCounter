@@ -9,11 +9,11 @@ final class MainCoordinator: MainCoordinatorProtocol {
     self.navigation = navigation
   }
   
-  func start() -> some View {
+  @MainActor func start() -> some View {
     AnyView(startCounter())
   }
   
-  func startCounter() -> any View {
+  @MainActor func startCounter() -> any View {
     navigation.start(root: ContractionCounterBuilder.start(navigation: navigation))
   }
   

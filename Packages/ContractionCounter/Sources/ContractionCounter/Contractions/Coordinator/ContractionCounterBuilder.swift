@@ -2,7 +2,7 @@ import NavUI
 import SwiftUI
 
 public final class ContractionCounterBuilder {
-  public static func start(navigation: Navigation) -> some View {
+  @MainActor public static func start(navigation: Navigation) -> some View {
     let coordinator = ContractionCounterCoordinator(navigation: navigation)
     let storage = ContractionCounterStorageMock() // ContractionCounterStorage(manager: storage.shared)
     let viewModel = ContractionCounterViewModel(

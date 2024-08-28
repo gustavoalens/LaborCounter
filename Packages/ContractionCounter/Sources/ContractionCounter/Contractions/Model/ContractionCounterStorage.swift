@@ -1,3 +1,4 @@
+@MainActor
 protocol ContractionCounterStorageProtocol {
   func fetchContractions() async throws(ContractionCounterStorageError) -> ContractionModel
 }

@@ -5,7 +5,8 @@ protocol ContractionCounterViewModelProtocol: ObservableObject, AnyObject {
   var viewObject: ContractionCounterViewObject { get }
 }
 
-final class ContractionCounterViewModel: ContractionCounterViewModelProtocol {
+@MainActor
+final class ContractionCounterViewModel: @preconcurrency ContractionCounterViewModelProtocol {
   private let coordinator: any ContractionCounterCoordinatorProtocol
   private let storage: ContractionCounterStorageProtocol
   
@@ -19,6 +20,9 @@ final class ContractionCounterViewModel: ContractionCounterViewModelProtocol {
     self.coordinator = coordinator
     self.storage = storage
     fetchStorage()
+    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+      self.viewObject.data.insert(.init(id: 5, start: "start", end: "end", duration: "dur"), at: 0)
+    }
   }
   
   private func fetchStorage() {

@@ -5,7 +5,7 @@ struct ContractionCounterView<ViewModel: ContractionCounterViewModelProtocol>: V
   @StateObject var viewModel: ViewModel
   
   var body: some View {
-    ZStack {
+    ZStack(alignment: .bottom) {
       DSColors.background
         .ignoresSafeArea()
       VStack {
@@ -16,9 +16,11 @@ struct ContractionCounterView<ViewModel: ContractionCounterViewModelProtocol>: V
               Text("\(data.duration)")
               Text(data.end)
             }
+            .animation(.bouncy(duration: 0.8), value: viewModel.viewObject.data)
           }
         }
       }
+      CounterView()
     }
   }
 }

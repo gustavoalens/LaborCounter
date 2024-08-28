@@ -62,7 +62,7 @@ public struct RoundedIconButtonView: View {
 #Preview {
   ZStack {
     DSColors.background
-    VStack {
+    VStack(spacing: 24) {
       RoundedIconButtonView(icon: Image(systemName: "play.circle"), size: .normal) {
         print("didTap")
       }
