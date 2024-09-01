@@ -6,6 +6,7 @@ public struct DSColors {
   public static var background: Color { DesignSystem.theme.colors.background }
   public static var accentBackground: Color { DesignSystem.theme.colors.accentBackground }
   public static var accent: Color { DesignSystem.theme.colors.accent }
+  public static var heatMin: Color { DesignSystem.theme.colors.heatMid }
 }
 
 
@@ -15,4 +16,5 @@ struct DefaultColorTheme: ColorTheme {
   var background: Color = Color("background", bundle: Bundle.module)
   var accentBackground: Color = Color("accentBackground", bundle: Bundle.module)
   var accent: Color = Color("accent", bundle: Bundle.module)
+  var heatMid: Color = Color("heatMid", bundle: Bundle.module)
 }

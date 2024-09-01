@@ -3,6 +3,7 @@ import DesignSystem
 
 struct CounterView: View {
   @State private var change: Bool = false
+  @State private var balance: Double = -0.8
   var body: some View {
     ZStack(alignment: change ? .leading : .center) {
       VStack {
@@ -13,10 +14,9 @@ struct CounterView: View {
                 Text("Start")
                 Text("11")
               }
-              VStack {
-                Text("Balance 1 min")
-                Text("21")
-              }
+              
+              BalanceView(balance: $balance)
+              
               VStack {
                 Text("buttom?")
                 Text("31")

@@ -11,6 +11,7 @@ public protocol ColorTheme {
   var background: Color { get }
   var accentBackground: Color { get }
   var accent: Color { get }
+  var heatMid: Color { get }
 }
 
 public protocol SpacingTheme {
