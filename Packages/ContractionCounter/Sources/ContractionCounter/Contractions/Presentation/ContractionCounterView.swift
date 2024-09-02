@@ -20,7 +20,7 @@ struct ContractionCounterView<ViewModel: ContractionCounterViewModelProtocol>: V
           }
         }
       }
-      CounterView()
+      CounterBuilder.getView()
     }
   }
 }

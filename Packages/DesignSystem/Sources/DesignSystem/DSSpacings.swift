@@ -2,17 +2,17 @@ import SwiftUI
 
 public struct DSSpacings {
   public struct Stack {
-    static var large: CGFloat { DesignSystem.theme.spacings.stack.large }
-    static var normal: CGFloat { DesignSystem.theme.spacings.stack.normal }
-    static var small: CGFloat { DesignSystem.theme.spacings.stack.small }
-    static var xsmall: CGFloat { DesignSystem.theme.spacings.stack.xsmall }
+    public static var large: CGFloat { DesignSystem.theme.spacings.stack.large }
+    public static var normal: CGFloat { DesignSystem.theme.spacings.stack.normal }
+    public static var small: CGFloat { DesignSystem.theme.spacings.stack.small }
+    public static var xsmall: CGFloat { DesignSystem.theme.spacings.stack.xsmall }
   }
   
   public struct Inline {
-    static var large: CGFloat { DesignSystem.theme.spacings.inline.large }
-    static var normal: CGFloat { DesignSystem.theme.spacings.inline.normal }
-    static var small: CGFloat { DesignSystem.theme.spacings.inline.small }
-    static var xsmall: CGFloat { DesignSystem.theme.spacings.inline.xsmall }
+    public static var large: CGFloat { DesignSystem.theme.spacings.inline.large }
+    public static var normal: CGFloat { DesignSystem.theme.spacings.inline.normal }
+    public static var small: CGFloat { DesignSystem.theme.spacings.inline.small }
+    public static var xsmall: CGFloat { DesignSystem.theme.spacings.inline.xsmall }
   }
 }
 

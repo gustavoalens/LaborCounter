@@ -5,34 +5,33 @@ struct BalanceView: View {
   @Binding var balance: Double
   
   var body: some View {
-    VStack(alignment: .center) {
-      Spacer()
-      Rectangle()
-        .fill(DSColors.heatMin)
-        .frame(height: 3)
-        .cornerRadius(3)
-        .shadow(radius: 3)
-        .rotationEffect(Angle(degrees: balance * 20))
-        .hueRotation(Angle(degrees: balance * 115))
-        .animation(.bouncy(duration: 0.7), value: balance)
-      Spacer()
-    }
-    .padding()
-    .phaseAnimator(BalancePhase.allCases) { view, phase in
-      switch phase {
-        case .inital:
-          view
-            .rotationEffect(Angle(degrees: 0.3))
-        case .final:
-          view
-            .rotationEffect(Angle(degrees: -0.3))
+      VStack(alignment: .center) {
+        Spacer()
+        Rectangle()
+          .fill(DSColors.heatMin)
+          .frame(height: 4)
+          .cornerRadius(3)
+          .shadow(radius: 1)
+          .rotationEffect(Angle(degrees: balance * 20))
+          .hueRotation(Angle(degrees: balance * 115))
+        Spacer()
       }
-    } animation: { phase in
-      switch phase {
-        case .inital: return .spring(duration: 0.1)
-        case .final: return .spring(duration: 0.1)
+      .padding(.vertical, DSSpacings.Stack.xsmall)
+      .phaseAnimator(BalancePhase.allCases) { view, phase in
+        switch phase {
+          case .inital:
+            view
+              .rotationEffect(Angle(degrees: 0.1))
+          case .final:
+            view
+              .rotationEffect(Angle(degrees: -0.1))
+        }
+      } animation: { phase in
+        switch phase {
+          case .inital: return .snappy(duration: 0.3)
+          case .final: return .snappy(duration: 0.3)
+        }
       }
-    }
   }
   
   enum BalancePhase: CaseIterable {
@@ -42,7 +41,7 @@ struct BalanceView: View {
 }
 
 #Preview {
-  var balance: Double = -0.4
+  var balance: Double = -1
   ZStack {
     DSColors.background
     BalanceView(balance: .init(get: { balance }, set: { _ in }))
