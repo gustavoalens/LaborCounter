@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D3618C62C8B993C00112C00 /* EntitiesKit in Resources */ = {isa = PBXBuildFile; fileRef = 1D3618C52C8B993C00112C00 /* EntitiesKit */; };
 		1D481F252BDDBCB400DCD0D8 /* LaborCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D481F242BDDBCB400DCD0D8 /* LaborCounterApp.swift */; };
 		1D481F272BDDBCB400DCD0D8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D481F262BDDBCB400DCD0D8 /* Persistence.swift */; };
 		1D481F2A2BDDBCB400DCD0D8 /* LaborCounter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D481F282BDDBCB400DCD0D8 /* LaborCounter.xcdatamodeld */; };
@@ -20,6 +21,7 @@
 		1D8D7B9E2BE056E4004DFDD3 /* ContractionCounter in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8D7B9D2BE056E4004DFDD3 /* ContractionCounter */; };
 		1D90E7082C64147600294899 /* DesignSystem in Resources */ = {isa = PBXBuildFile; fileRef = 1D90E7072C64147600294899 /* DesignSystem */; };
 		1D90E70D2C643C7400294899 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1D90E70C2C643C7400294899 /* Localizable.xcstrings */; };
+		1DA9B7932C8B8E7E00FF6240 /* StorageKit in Resources */ = {isa = PBXBuildFile; fileRef = 1DA9B7922C8B8E7E00FF6240 /* StorageKit */; };
 		1DB103592BDDCB80008A8EB5 /* ContractionCounter in Resources */ = {isa = PBXBuildFile; fileRef = 1DB103572BDDCB7F008A8EB5 /* ContractionCounter */; };
 		1DCA211E2C76BA730022C4C5 /* LaunchingKit in Resources */ = {isa = PBXBuildFile; fileRef = 1DCA211D2C76BA730022C4C5 /* LaunchingKit */; };
 		1DCA21202C76BA830022C4C5 /* LaunchingKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1DCA211F2C76BA830022C4C5 /* LaunchingKit */; };
@@ -44,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D3618C52C8B993C00112C00 /* EntitiesKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EntitiesKit; sourceTree = "<group>"; };
 		1D481F212BDDBCB400DCD0D8 /* LaborCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaborCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D481F242BDDBCB400DCD0D8 /* LaborCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaborCounterApp.swift; sourceTree = "<group>"; };
 		1D481F262BDDBCB400DCD0D8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		1D90E7072C64147600294899 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DesignSystem; sourceTree = "<group>"; };
 		1D90E70B2C643C0000294899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D90E70C2C643C7400294899 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		1DA9B7922C8B8E7E00FF6240 /* StorageKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = StorageKit; sourceTree = "<group>"; };
 		1DB103572BDDCB7F008A8EB5 /* ContractionCounter */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ContractionCounter; sourceTree = "<group>"; };
 		1DCA211D2C76BA730022C4C5 /* LaunchingKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LaunchingKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +195,8 @@
 		1DB103582BDDCB7F008A8EB5 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				1D3618C52C8B993C00112C00 /* EntitiesKit */,
+				1DA9B7922C8B8E7E00FF6240 /* StorageKit */,
 				1DCA211D2C76BA730022C4C5 /* LaunchingKit */,
 				1D90E7072C64147600294899 /* DesignSystem */,
 				1DB103572BDDCB7F008A8EB5 /* ContractionCounter */,
@@ -312,7 +318,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D3618C62C8B993C00112C00 /* EntitiesKit in Resources */,
 				1D481F322BDDBCB600DCD0D8 /* Preview Assets.xcassets in Resources */,
+				1DA9B7932C8B8E7E00FF6240 /* StorageKit in Resources */,
 				1D90E70D2C643C7400294899 /* Localizable.xcstrings in Resources */,
 				1D481F2E2BDDBCB600DCD0D8 /* Assets.xcassets in Resources */,
 				1DCA211E2C76BA730022C4C5 /* LaunchingKit in Resources */,

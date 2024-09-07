@@ -3,6 +3,7 @@ import DesignSystem
 
 struct BalanceView: View {
   @Binding var balance: Double
+  var phasing: Bool = true
   
   var body: some View {
       VStack(alignment: .center) {
@@ -18,18 +19,20 @@ struct BalanceView: View {
       }
       .padding(.vertical, DSSpacings.Stack.xsmall)
       .phaseAnimator(BalancePhase.allCases) { view, phase in
-        switch phase {
-          case .inital:
-            view
-              .rotationEffect(Angle(degrees: 0.1))
-          case .final:
-            view
-              .rotationEffect(Angle(degrees: -0.1))
+        if phasing {
+          switch phase {
+            case .inital:
+              view
+                .rotationEffect(Angle(degrees: 0.7))
+            case .final:
+              view
+                .rotationEffect(Angle(degrees: -0.7))
+          }
         }
       } animation: { phase in
         switch phase {
-          case .inital: return .snappy(duration: 0.3)
-          case .final: return .snappy(duration: 0.3)
+          case .inital: return .snappy(duration: 0.25)
+          case .final: return .snappy(duration: 0.25)
         }
       }
   }

@@ -11,22 +11,27 @@ protocol CounterViewModelProtocol: ObservableObject {
 final class CounterViewModel: CounterViewModelProtocol {
   @Published var viewObject: CounterViewObject = .init()
   private let counter: Counter = .init()
+  private var startDate: Date = Date.now
+  private var interval: TimeInterval = .zero
+  private let storage: ContractionCounterStorageProtocol
   
   func start() {
-    counter.start { [weak self] seconds in
+    startDate = counter.start { [weak self] seconds in
       self?.updateTime(range: seconds)
     }
     updateTime(range: 0)
   }
   
   func stop() {
-    counter.stop()
+    let finalDate = counter.stop()
+    
   }
   
   private func updateTime(range: TimeInterval) {
     viewObject.balanceReference = min((range / 60) - 1, 1)
     let ref = modf(range / 60)
     viewObject.timer = String(format: "%02d:%02d", Int(ref.0), Int(ref.1 * 60))
+    interval =  range
   }
 }
 
@@ -35,7 +40,8 @@ final class Counter {
   private var timerCancellable: AnyCancellable?
   private var startDate: Date = Date()
   
-  func start(updating: @escaping (_ seconds: TimeInterval) -> Void) {
+  @discardableResult
+  func start(updating: @escaping (_ seconds: TimeInterval) -> Void) -> Date {
     startDate = Date.now
     timerCancellable = Timer.publish(every: 1, on: .main, in: .default)
       .autoconnect()
@@ -45,9 +51,13 @@ final class Counter {
         let result = time.timeIntervalSince(self.startDate)
         updating(result)
       })
+    
+    return startDate
   }
   
-  func stop() {
+  @discardableResult
+  func stop() -> Date {
     timerCancellable?.cancel()
+    return Date.now
   }
 }
